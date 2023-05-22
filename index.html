@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center my-5">Bài tập JS5</h2>
+      <div class="row">
+        <div class="col-3 text-center">
+          <div
+            class="nav flex-column nav-pills "
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical">
+            <a
+              class="nav-link btn btn-outline-danger active"
+              id="v-pills-bai1-tab"
+              data-toggle="pill"
+              href="#v-pills-bai1"
+              role="tab"
+              aria-controls="v-pills-bai1"
+              aria-selected="true"
+              >Bài tập 1</a
+            >
+            <a
+              class="nav-link btn btn-outline-danger"
+              id="v-pills-bai2-tab"
+              data-toggle="pill"
+              href="#v-pills-bai2"
+              role="tab"
+              aria-controls="v-pills-bai2"
+              aria-selected="false"
+              >Bài tập 2</a
+            >
+            <a
+              class="nav-link btn btn-outline-danger"
+              id="v-pills-bai3-tab"
+              data-toggle="pill"
+              href="#v-pills-bai3"
+              role="tab"
+              aria-controls="v-pills-bai3"
+              aria-selected="false"
+              >Bài tập 3</a
+            >
+            <a
+              class="nav-link btn btn-outline-danger"
+              id="v-pills-bai4-tab"
+              data-toggle="pill"
+              href="#v-pills-bai4"
+              role="tab"
+              aria-controls="v-pills-bai4"
+              aria-selected="false"
+              >Bài tập 4</a
+            >
+          </div>
+        </div>
+        <div class="col-9 img-thumbnail">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="v-pills-bai1"
+              role="tabpanel"
+              aria-labelledby="v-pills-bai1-tab">
+              <div class="form-group">
+                <h2 class="mb-4">Quản lí tuyển sinh</h2>
+                <input
+                  type="number"
+                  class="mt-2"
+                  id="txt-diem-chuan"
+                  placeholder="Điểm chuẩn" />
+                <select name="" id="txt-khuvuc">
+                  <option value="0">Chọn Khu Vực</option>
+                  <option value="2">A</option>
+                  <option value="1">B</option>
+                  <option value="0.5">C</option>
+                </select>
+                <select name="" id="txt-doituong">
+                  <option value="0">Chọn đối tượng</option>
+                  <option value="2.5">1</option>
+                  <option value="1.5">2</option>
+                  <option value="1">3</option>
+                </select>
+                <br />
+                <input
+                  type="number"
+                  class="mt-3"
+                  id="txt-diem1"
+                  placeholder="Điểm thứ nhất" />
+                <input
+                  type="number"
+                  class="mt-3"
+                  id="txt-diem2"
+                  placeholder="Điểm thứ hai" />
+                <input
+                  type="number"
+                  class="mt-3"
+                  id="txt-diem3"
+                  placeholder="Điểm thứ ba" />
+                <button onclick="xetDiem()" class="btn btn-danger">
+                  Kết quả
+                </button>
+                <div id="result1" class="alert-dark mt-2"></div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-bai2"
+              role="tabpanel"
+              aria-labelledby="v-pills-bai2-tab">
+              <div class="form-group">
+                <h2>Tính tiền điện</h2>
+                <input
+                  type="text"
+                  class=""
+                  id="txt-ho-ten"
+                  placeholder="Nhập họ và tên" />
+                <input
+                  type="number"
+                  class=""
+                  id="txt-kw"
+                  placeholder="Nhập số KW" />
+                <button onclick="tinhKw()" class="btn btn-danger my-3">
+                  Tính tiền điện
+                </button>
+                <div id="result2" class="alert-dark mt-2"></div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-bai3"
+              role="tabpanel"
+              aria-labelledby="v-pills-bai3-tab">
+              <div class="form-group">
+                <h2 class="mb-4">Tính tiền thuế</h2>
+                <input
+                  type="text"
+                  class=""
+                  id="txt-ho-ten2"
+                  placeholder="Họ và Tên" />
+                <input
+                  type="number"
+                  class=""
+                  id="txt-tong-thu-nhap"
+                  placeholder="Tổng thu nhập năm" />
+                <input
+                  type="number"
+                  class=""
+                  id="txt-so-nguoi-phu-thuoc"
+                  placeholder="Số người phụ thuộc" />
+                <button onclick="tienThue()" class="btn btn-danger">
+                  Tính tiền thuế
+                </button>
+                <div id="result3" class="alert-dark"></div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-bai4"
+              role="tabpanel"
+              aria-labelledby="v-pills-bai4-tab">
+              <div class="form-group">
+                <h2 class="mb-4">Tính tiền cáp</h2>
+                <select id="txt-option" onchange="myOption()">
+                  <option value="0">Chọn loại khách hàng</option>
+                  <option value="1">Nhà dân</option>
+                  <option value="2">Doanh nghiệp</option>
+                </select>
+                <input
+                  type="text"
+                  class=""
+                  id="txt-code"
+                  placeholder="Mã khách hàng" />
+                <input
+                  type="number"
+                  class=""
+                  id="txt-kenh-cao-cap"
+                  placeholder="Số kênh cao cấp" />
+                <br />
+                <input
+                  type="number"
+                  id="txt-option2"
+                  placeholder="Số kết nối"
+                  style="display: none" />
+                <button onclick="tienCap()" class="btn btn-danger">
+                  Tính tiền cáp
+                </button>
+                <div id="result4" class="alert-dark"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <!-- my JS -->
+    <script src="./index.js"></script>
+  </body>
+</html>
